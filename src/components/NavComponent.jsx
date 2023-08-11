@@ -26,17 +26,17 @@ function NavComponent() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">
+                  <Link className="nav-link" to="/week2">
                     Week2
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profile">
-                    Week2
+                  <Link className="nav-link" to="/week3">
+                    Week3
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/course">
+                  <Link className="nav-link" to="/week4">
                     Week4
                   </Link>
                 </li>
