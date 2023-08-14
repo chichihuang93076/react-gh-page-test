@@ -12,7 +12,7 @@ function NavComponent() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link className="nav-link active" to="/">
-                    Home
+                    React 工作坊
                   </Link>
                 </li>
                 <li className="nav-item">
