@@ -1,8 +1,8 @@
 //import React from "react";
-//import { useState } from "react";
+import { useState } from "react";
 
 const Week1 = () => {
-  const products = [
+  const data = [
     {
       id: 1,
       itName: "珍珠奶茶",
@@ -61,9 +61,30 @@ const Week1 = () => {
     },
   ];
 
+  const [products, setProducts] = useState(data);
+
+  const handleQty = (id, num) => {
+    //console.log(id, num);
+    const newProducts = products.map((item) => {
+      return item.id === id && ((item.itQty > 0 && num == -1) || num == 1)
+        ? { ...item, itQty: item.itQty + num }
+        : item;
+    });
+    //console.log(newProducts);
+    setProducts(newProducts);
+  };
+
+  const handleitNameChange = (e, id) => {
+    const newProducts = products.map((item) =>
+      item.id === id ? { ...item, itName: e.target.value } : item
+    );
+    setProducts(newProducts);
+    console.log(products);
+  };
+
   return (
     <div>
-      <table>
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">品項</th>
@@ -75,15 +96,32 @@ const Week1 = () => {
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
-              <td>{product.itName}</td>
+              <td>
+                <input
+                  className="form-control"
+                  type="text"
+                  value={product.itName}
+                  onChange={(e) => handleitNameChange(e, product.id)}
+                />
+              </td>
               <td>
                 <small>{product.itDesc}</small>
               </td>
               <td>{product.itPrice}</td>
               <td>
-                <button>-</button>
-                {product.itQty}
-                <button>+</button>
+                <button
+                  className="btn btn-outlined-secondary btn-lg"
+                  onClick={() => handleQty(product.id, -1)}
+                >
+                  -
+                </button>
+                <span className="h6"> {product.itQty} </span>
+                <button
+                  className="btn btn-outlined-secondary btn-lg"
+                  onClick={() => handleQty(product.id, 1)}
+                >
+                  +
+                </button>
               </td>
             </tr>
           ))}
