@@ -83,7 +83,7 @@ const Week1 = () => {
   };
 
   return (
-    <div>
+    <div className="container mt-5">
       <table className="table table-striped table-hover">
         <thead>
           <tr>

@@ -27,7 +27,7 @@ function NavComponent() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/week2">
-                    Week2
+                    第二週
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -36,8 +36,8 @@ function NavComponent() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/week4">
-                    Week4
+                  <Link className="nav-link" to="/Week2Template">
+                    第二週範本
                   </Link>
                 </li>
               </ul>
