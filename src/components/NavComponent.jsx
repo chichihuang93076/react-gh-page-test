@@ -32,12 +32,7 @@ function NavComponent() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/week3">
-                    Week3
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/Week2Template">
-                    第二週範本
+                    第三週
                   </Link>
                 </li>
               </ul>

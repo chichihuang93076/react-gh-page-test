@@ -59,8 +59,14 @@ const Week2 = () => {
   const [cart, setCart] = useState([]);
   const [sum, setSum] = useState(0);
 
+  //計算總金額
+  const sumtotal = (data) =>
+    data
+      .map((item) => item.qty * item.price)
+      .reduce((arr, cur) => arr + cur, 0);
+
   const addToCart = (drink) => {
-    setCart([
+    const newCart = [
       ...cart,
       {
         ...drink,
@@ -68,16 +74,26 @@ const Week2 = () => {
         quantity: 1,
         subtotal: drink.price,
       },
-    ]);
-    //console.log(cart);
+    ];
+    setCart(newCart);
+    setSum(sumtotal(newCart));
   };
 
-  useEffect(() => {
-    const total = cart.reduce((pre, next) => {
-      return pre + next.price;
-    }, 0);
-    setSum(total);
-  }, [cart]);
+  const updateCart = (item, value) => {
+    // console.log(item, value);
+    const newCart = cart.map((cartItem) => {
+      if (cartItem.id === item.id) {
+        return {
+          ...cartItem,
+          quantity: parseInt(value),
+          subtotal: cartItem.price * parseInt(value),
+        };
+      }
+      return cartItem;
+    });
+    setCart(newCart);
+    setSum(sumtotal(newCart));
+  };
 
   return (
     <div className="container mt-5">
@@ -101,44 +117,7 @@ const Week2 = () => {
             })}
           </div>
         </div>
-        <div className="col-md-8">
-          <div>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col" width="50">
-                    操作
-                  </th>
-                  <th scope="col">品項</th>
-                  <th scope="col">描述</th>
-                  <th scope="col" width="90">
-                    數量
-                  </th>
-                  <th scope="col">單價</th>
-                  <th scope="col">小計</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((item) => {
-                  return <Cart key={item.id} cart={item} />;
-                })}
-              </tbody>
-            </table>
-            <div className="text-end mb-3">
-              <h5>
-                總計: <span>${sum}</span>
-              </h5>
-            </div>
-            <textarea
-              className="form-control mb-3"
-              rows="3"
-              placeholder="備註"
-            ></textarea>
-            <div className="text-end">
-              <button className="btn btn-primary">送出</button>
-            </div>
-          </div>
-        </div>
+        <Cart cart={cart} setCart={setCart} sum={sum} updateCart={updateCart} />
       </div>
       <hr />
       <OrderList />
