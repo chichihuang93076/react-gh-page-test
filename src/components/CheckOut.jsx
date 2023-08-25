@@ -4,11 +4,11 @@ import { useState } from "react";
 const CheckOut = (props) => {
   let { token, setToken } = props;
   const [message, setMessage] = useState("");
-  const baseURL = "https:/todolist-api.hexschool.io";
+  const site = "https:/todolist-api.hexschool.io";
 
   const checkOut = async () => {
     try {
-      const response = await axios.get(`${baseURL}/users/checkout`, {
+      const response = await axios.get(`${site}/users/checkout`, {
         headers: {
           Authorization: token,
         },

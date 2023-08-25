@@ -8,9 +8,9 @@ import TodoList from "./TodoList";
 const Week3 = () => {
   const [token, setToken] = useState("");
 
-  function getLocaltoken() {
-    return JSON.parse(localStorage.getItem("token"));
-  }
+  // function getLocaltoken() {
+  //   return JSON.parse(localStorage.getItem("token"));
+  // }
 
   return (
     <div className="container mt-5">
@@ -18,7 +18,7 @@ const Week3 = () => {
       <SignIn />
       <CheckOut token={token} setToken={setToken} />
       <SignOut token={token} setToken={setToken} />
-      {getLocaltoken && <TodoList token={token} />}
+      {token && <TodoList token={token} />}
     </div>
   );
 };

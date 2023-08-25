@@ -4,12 +4,12 @@ import { useState } from "react";
 const SignOut = (props) => {
   let { token, setToken } = props;
   const [message, setMessage] = useState("");
-  const baseURL = "https:/todolist-api.hexschool.io";
+  const site = "https:/todolist-api.hexschool.io";
 
   const signOut = async () => {
     try {
       const res = await axios.post(
-        `${baseURL}/users/sign_out`,
+        `${site}/users/sign_out`,
         {},
         {
           headers: {

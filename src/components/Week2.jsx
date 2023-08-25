@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cart from "./Cart";
 import Drink from "./Drink";
 import OrderList from "./OrderList";
