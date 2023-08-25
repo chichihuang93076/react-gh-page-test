@@ -16,7 +16,6 @@ const CheckOut = (props) => {
       console.log(response.data);
       if (response.data.status) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        localStorage.setItem("token", JSON.stringify(token));
         setMessage("驗證成功 UID: " + response.data.uid);
       } else {
         setMessage("驗證失敗:" + response.data.message);

@@ -15,7 +15,7 @@ const TodoList = ({ token }) => {
   }, []);
 
   const getTodos = async () => {
-    //console.log(token);
+    console.log(token);
     try {
       const res = await axios.get(`${site}/todos/`, {
         headers: {

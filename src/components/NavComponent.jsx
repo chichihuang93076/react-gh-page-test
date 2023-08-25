@@ -35,6 +35,16 @@ function NavComponent() {
                     第三週
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signin">
+                    登入
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signup">
+                    註冊
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

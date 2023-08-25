@@ -16,6 +16,7 @@ const SignIn = () => {
       });
       console.log(response.data);
       if (response.data.status) {
+        localStorage.setItem("token", JSON.stringify(response.data.token));
         setMessage("Token:" + response.data.token);
       } else {
         setMessage("登入失敗:" + response.data.message);

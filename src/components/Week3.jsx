@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CheckOut from "./CheckOut";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
@@ -8,17 +8,22 @@ import TodoList from "./TodoList";
 const Week3 = () => {
   const [token, setToken] = useState("");
 
-  // function getLocaltoken() {
-  //   return JSON.parse(localStorage.getItem("token"));
-  // }
+  const localtoken = JSON.parse(localStorage.getItem("token"));
+
+  useEffect(() => {
+    if (localtoken) {
+      setToken(localtoken);
+    }
+  }, []);
 
   return (
     <div className="container mt-5">
-      <SignUp />
-      <SignIn />
+      <p>{token}</p>
+      {token && <TodoList token={token} />}
       <CheckOut token={token} setToken={setToken} />
       <SignOut token={token} setToken={setToken} />
-      {token && <TodoList token={token} />}
+      <SignUp />
+      <SignIn />
     </div>
   );
 };

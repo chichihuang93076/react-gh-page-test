@@ -7,6 +7,7 @@ import Week1 from "./components/Week1";
 import Week2 from "./components/Week2";
 import Week3 from "./components/Week3";
 import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/week2" element={<Week2 />} />
         <Route path="/Week3" element={<Week3 />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>
   );
