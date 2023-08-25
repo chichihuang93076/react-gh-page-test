@@ -134,7 +134,6 @@ const TodoList = ({ token }) => {
           <span>新增代辦事項</span>
         </button>
       </div>
-
       <table className="table table-striped table-hover">
         <thead>
           <tr>
