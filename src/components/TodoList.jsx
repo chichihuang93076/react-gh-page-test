@@ -8,7 +8,7 @@ const TodoList = ({ token }) => {
   const [todos, setTodos] = useState([]);
   const [todoEdit, setTodoEdit] = useState({});
 
-  const site = "https:/todolist-api.hexschool.io";
+  const site = "https://todolist-api.hexschool.io";
 
   useEffect(() => {
     getTodos();

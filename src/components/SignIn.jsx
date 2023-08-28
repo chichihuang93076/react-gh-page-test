@@ -6,7 +6,7 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const site = "https:/todolist-api.hexschool.io";
+  const site = "https://todolist-api.hexschool.io";
 
   const signIn = async () => {
     try {

@@ -4,7 +4,7 @@ import { useState } from "react";
 const SignOut = (props) => {
   let { token, setToken } = props;
   const [message, setMessage] = useState("");
-  const site = "https:/todolist-api.hexschool.io";
+  const site = "https://todolist-api.hexschool.io";
 
   const signOut = async () => {
     try {
