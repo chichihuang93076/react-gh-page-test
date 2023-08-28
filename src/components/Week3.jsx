@@ -14,7 +14,7 @@ const Week3 = () => {
     if (localtoken) {
       setToken(localtoken);
     }
-  }, []);
+  }, [localtoken]);
 
   return (
     <div className="container mt-5">
